@@ -12,6 +12,7 @@ import fiap.scj.restf.spring.beans.Message;
 public class Client {
 
 	public static void main(String args[]) {
+
 		RestTemplate restTemplate = new RestTemplate();
 		ResponseEntity<List<Message>> response = restTemplate.exchange(
 				"http://localhost:8080/messages/",
@@ -20,5 +21,6 @@ public class Client {
 				new ParameterizedTypeReference<List<Message>>() { });
 		List<Message> messages = response.getBody();
 		System.out.println(messages.toString());
+
 	}
 }

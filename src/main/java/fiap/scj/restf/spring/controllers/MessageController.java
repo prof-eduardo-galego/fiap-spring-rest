@@ -29,11 +29,11 @@ public class MessageController {
 	public Message getMessage(
 			@ApiParam(value = "Valor da mensagem", required = true) @RequestParam(value="message", defaultValue="World") String message) {
 		return new Message(message);
-	}
-	
+	};
+
 	@GetMapping("/")
 	public List<Message> getMessageList() {
 		return Arrays.asList(new Message("Item1"), new Message("Item2"));
 	}
-	
+
 }
